@@ -1,4 +1,3 @@
-import React from "react";
 import { PiLinkSimpleHorizontalLight } from "react-icons/pi";
 import { SlRefresh } from "react-icons/sl";
 import Arrow_Split_Gray from "../assets/Arrow_Split_Gray.svg";
@@ -7,12 +6,11 @@ import { GoPlus } from "react-icons/go";
 
 interface FormulaBarProps {
 	colWidths: number[];
-	setColWidths: React.Dispatch<React.SetStateAction<number[]>>;
 }
 
-function FormulaBar({ colWidths, setColWidths }: FormulaBarProps) {
+function FormulaBar({ colWidths }: FormulaBarProps) {
 	return (
-		<div className="flex w-full border-b ">
+		<div className="flex border-b w-[99%] ">
 			<div
 				className="px-2 py-1 text-sm text-gray-700 truncate border border-[#eeeeee]"
 				style={{ width: colWidths[0] }}
@@ -76,7 +74,7 @@ function FormulaBar({ colWidths, setColWidths }: FormulaBarProps) {
 				className="px-2 py-1 text-sm text-gray-700 truncate border border-[#eeeeee] bg-[#eeeeee] flex items-center justify-center"
 				style={{ width: colWidths[10] }}
 			>
-				<GoPlus className="text-3xl"/>
+				<GoPlus className="text-3xl" />
 			</div>
 		</div>
 	);

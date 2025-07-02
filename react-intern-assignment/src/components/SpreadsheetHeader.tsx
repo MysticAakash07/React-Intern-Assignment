@@ -1,10 +1,75 @@
 import { columns } from "../data/spreadsheetData";
-const SpreadsheetHeader = () => {
+import { useRef } from "react";
+import { RxDragHandleDots2 } from "react-icons/rx";
+
+interface SpreadsheetHeaderProps {
+	colWidths: number[];
+	setColWidths: React.Dispatch<React.SetStateAction<number[]>>;
+}
+
+const SpreadsheetHeader = ({
+	colWidths,
+	setColWidths,
+}: SpreadsheetHeaderProps) => {
+	const startX = useRef(0);
+	const startWidth = useRef(0);
+	const colIndexRef = useRef<number | null>(null);
+
+	const handleMouseDown = (e: React.MouseEvent, index: number) => {
+		startX.current = e.clientX;
+		startWidth.current = colWidths[index];
+		colIndexRef.current = index;
+
+		document.addEventListener("mousemove", handleMouseMove);
+		document.addEventListener("mouseup", handleMouseUp);
+	};
+
+	const handleMouseMove = (e: MouseEvent) => {
+		const dx = e.clientX - startX.current;
+		const index = colIndexRef.current;
+		if (index === null) return;
+
+		setColWidths((prev) => {
+			const updated = [...prev];
+			updated[index] = Math.max(50, startWidth.current + dx); // min width 50px
+			return updated;
+		});
+	};
+
+	const handleMouseUp = () => {
+		document.removeEventListener("mousemove", handleMouseMove);
+		document.removeEventListener("mouseup", handleMouseUp);
+		colIndexRef.current = null;
+	};
+
 	return (
-		<div className="grid grid-cols-9 text-sm bg-gray-100 border-b font-medium">
-			{columns.map((col) => (
-				<div key={col} className="px-3 py-2 border-r truncate">
-					{col}
+		<div className="flex sticky top-0 z-10 bg-white border-b">
+			<div
+				className="px-2 py-1 text-sm font-bold text-gray-600 bg-gray-100 border border-[#eeeeee] text-center"
+				style={{ width: colWidths[0] }}
+			>
+				#
+			</div>
+
+			{columns.map((heading, i) => (
+				<div
+					key={i}
+					className="relative flex items-center justify-between px-2 py-1 text-sm font-semibold text-gray-700 border border-[#eeeeee] truncate"
+					style={{
+						width: colWidths[i + 1],
+						minWidth: 50,
+						backgroundColor: heading.bgColor || "#f3f3f3", // default gray background
+					}}
+				>
+					<div className="flex items-center gap-1">
+						{heading.icon1 && <span>{heading.icon1}</span>}
+						<span>{heading.label}</span>
+					</div>
+					{heading.icon2 && <span>{heading.icon2}</span>}
+					<div
+						onMouseDown={(e) => handleMouseDown(e, i + 1)}
+						className="absolute top-0 right-0 h-full w-2 cursor-col-resize"
+					></div>
 				</div>
 			))}
 		</div>

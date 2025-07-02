@@ -27,10 +27,10 @@ function App() {
 		<div className="flex flex-col h-screen">
 			<Navbar />
 			<Toolbar />
-			<FormulaBar colWidths={colWidths} setColWidths={setColWidths} />
-			{/* <div className="flex-1 overflow-auto">
+			<FormulaBar colWidths={colWidths} />
+			<div className="flex-1 overflow-auto">
 				<Spreadsheet colWidths={colWidths} setColWidths={setColWidths} />
-			</div> */}
+			</div>
 			{/* <SheetTabs /> */}
 		</div>
 	);

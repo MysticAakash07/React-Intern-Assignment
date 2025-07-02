@@ -1,13 +1,46 @@
+import BriefCase from "../assets/Briefcase.svg";
+import Calendar from "../assets/Calendar.svg";
+import { MdExpandCircleDown } from "react-icons/md";
+import { FaUser } from "react-icons/fa";
+import { FaGlobe } from "react-icons/fa6";
+import emoji from "../assets/Emoji.svg";
+import { MdOutlineExpandMore } from "react-icons/md";
+
 export const columns = [
-	"Job Request",
-	"Submitted",
-	"Status",
-	"Submitter",
-	"URL",
-	"Assigned",
-	"Priority",
-	"Due Date",
-	"Est. Value",
+	{
+		label: "Job Request",
+		icon1: <img src={BriefCase} className="w-5 " />,
+		icon2: <MdOutlineExpandMore className="text-[#bcbcbc] text-lg" />,
+	},
+	{
+		label: "Submitted",
+		icon1: <img src={Calendar} className="w-5 " />,
+		icon2: <MdOutlineExpandMore className="text-[#bcbcbc] text-lg" />,
+	},
+	{
+		label: "Status",
+		icon1: <MdExpandCircleDown className="text-[#bcbcbc] text-lg" />,
+		icon2: <MdOutlineExpandMore className="text-[#bcbcbc] text-lg" />,
+	},
+	{
+		label: "Submitter",
+		icon1: <FaUser className="text-[#bcbcbc] text-lg" />,
+		icon2: <MdOutlineExpandMore className="text-[#bcbcbc] text-lg" />,
+	},
+	{
+		label: "URL",
+		icon1: <FaGlobe className="text-[#bcbcbc] text-lg" />,
+		icon2: <MdOutlineExpandMore className="text-[#bcbcbc] text-lg" />,
+	},
+	{
+		label: "Assigned",
+		bgColor: "#D2E0D4",
+		icon1: <img src={emoji} className="w-5" />,
+	},
+	{ label: "Priority", bgColor: "#EAE3FC" },
+	{ label: "Due Date", bgColor: "#EAE3FC" },
+	{ label: "Est. Value", bgColor: "#FFE9E0" },
+	{},
 ];
 
 export const rows = [

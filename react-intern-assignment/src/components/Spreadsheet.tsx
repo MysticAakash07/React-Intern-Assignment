@@ -1,14 +1,15 @@
-import { rows } from "../data/spreadsheetData";
 import SpreadsheetHeader from "./SpreadsheetHeader";
-import SpreadsheetRow from "./SpreadsheetRow";
 
-const Spreadsheet = () => {
+interface SpreadsheetProps {
+	colWidths: number[];
+	setColWidths: React.Dispatch<React.SetStateAction<number[]>>;
+}
+
+const Spreadsheet = ({ colWidths, setColWidths }: SpreadsheetProps) => {
 	return (
-		<div>
-			<SpreadsheetHeader />
-			{rows.map((row, index) => (
-				<SpreadsheetRow key={index} data={row} />
-			))}
+		<div className="w-[99%]">
+			<SpreadsheetHeader colWidths={colWidths} setColWidths={setColWidths} />
+			{/* Data rows will come here next */}
 		</div>
 	);
 };
