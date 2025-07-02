@@ -9,7 +9,7 @@ import Arrow_Split from "../assets/Arrow _Split.svg";
 
 const Toolbar = () => {
 	return (
-		<div className="flex gap-2 px-3 py-1.5 justify-between border-b border-gray-300 text-sm ">
+		<div className="flex gap-2 px-3 py-1.5 justify-between border-b border-[#eeeeee] text-sm ">
 			{/* Left */}
 			<div className="flex items-center gap-5">
 				<button className="flex items-center justify-center gap-1 border-r-2 border-gray-300 px-3 py-1">
