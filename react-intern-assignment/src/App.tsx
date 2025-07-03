@@ -27,7 +27,7 @@ function App() {
 			<Navbar />
 			<Toolbar />
 
-			<div className="flex-1 overflow-x-auto w-[99%]">
+			<div className="flex-1 overflow-x-auto w-[99%] scrollbar-hide">
 				<FormulaBar colWidths={colWidths} />
 				<SpreadsheetHeader colWidths={colWidths} setColWidths={setColWidths} />
 				<div
