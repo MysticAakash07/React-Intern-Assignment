@@ -43,9 +43,9 @@ const SpreadsheetHeader = ({
 	};
 
 	return (
-		<div className="flex sticky top-0 z-10 bg-white border-b">
+		<div className="flex sticky top-0 z-10 bg-white">
 			<div
-				className="px-2 py-1 text-sm font-bold text-gray-600 bg-gray-100 border border-[#eeeeee] text-center"
+				className="px-2 py-1 text-lg  text-[#BCBCBC] bg-gray-100 border border-[#eeeeee] text-center"
 				style={{ width: colWidths[0] }}
 			>
 				#

@@ -10,7 +10,7 @@ interface FormulaBarProps {
 
 function FormulaBar({ colWidths }: FormulaBarProps) {
 	return (
-		<div className="flex border-b w-[99%] ">
+		<div className="flex w-full">
 			<div
 				className="px-2 py-1 text-sm text-gray-700 truncate border border-[#eeeeee]"
 				style={{ width: colWidths[0] }}

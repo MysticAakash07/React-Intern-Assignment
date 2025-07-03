@@ -54,6 +54,7 @@ export const rows = [
 		priority: "Medium",
 		dueDate: "20-11-2024",
 		estValue: "₹6,200,000",
+		placeholder: "...",
 	},
 	{
 		jobRequest: "Update press kit for company redesign",
@@ -65,6 +66,7 @@ export const rows = [
 		priority: "High",
 		dueDate: "30-10-2024",
 		estValue: "₹3,500,000",
+		placeholder: "...",
 	},
 	{
 		jobRequest: "Finalize user testing feedback for application",
@@ -76,6 +78,7 @@ export const rows = [
 		priority: "Medium",
 		dueDate: "10-12-2024",
 		estValue: "₹4,750,000",
+		placeholder: "...",
 	},
 	{
 		jobRequest: "Design financial report for Q4",
@@ -87,6 +90,7 @@ export const rows = [
 		priority: "Low",
 		dueDate: "15-01-2025",
 		estValue: "₹5,900,000",
+		placeholder: "...",
 	},
 	{
 		jobRequest: "Prepare financial report for Q4",
@@ -98,6 +102,7 @@ export const rows = [
 		priority: "Low",
 		dueDate: "30-01-2025",
 		estValue: "₹2,800,000",
+		placeholder: "...",
 	},
 	{},
 	{},
