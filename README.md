@@ -6,7 +6,7 @@ This is a front-end-only static spreadsheet prototype built using React, TypeScr
 
 ## 📸 Live Demo
 
-🔗 [Live Site URL (Vercel)](https://your-deployment-url.com)
+🔗 [Live Site URL (Vercel)](https://react-intern-assignment-mu.vercel.app/)
 
 ## 💻 Tech Stack
 
@@ -30,7 +30,7 @@ This is a front-end-only static spreadsheet prototype built using React, TypeScr
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/react-intern-assignment.git
+git clone https://github.com/MysticAakash07/React-Intern-Assignment.git
 cd react-intern-assignment
 
 # Install dependencies

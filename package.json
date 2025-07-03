@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@tanstack/react-table": "^8.21.3",
-    "zustand": "^5.0.6"
-  }
-}
