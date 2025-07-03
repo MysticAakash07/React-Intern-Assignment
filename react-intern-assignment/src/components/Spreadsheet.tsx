@@ -97,7 +97,12 @@ const Spreadsheet = ({ colWidths }: SpreadsheetProps) => {
 						return (
 							<div
 								key={colIdx}
-								onClick={() => setSelectedCell({ row: rowIndex, col: colIdx })}
+								onClick={() => {
+									setSelectedCell({ row: rowIndex, col: colIdx });
+									console.log(
+										`Clicked cell [Row ${rowIndex + 1}, Col ${colIdx + 1}]`
+									);
+								}}
 								className={`${baseClass} ${textAlign} ${selectedBorder}`}
 								style={{
 									...style,
@@ -110,6 +115,8 @@ const Spreadsheet = ({ colWidths }: SpreadsheetProps) => {
 										borderRightColor: "#cbcbcb",
 										borderTopColor: "#f6f6f6",
 										borderBottomColor: "#f6f6f6",
+										borderLeftWidth: "2px",
+										borderRightWidth: "2px",
 									}),
 								}}
 							>
