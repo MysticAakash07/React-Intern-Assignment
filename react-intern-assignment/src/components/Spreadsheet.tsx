@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { rows } from "../data/spreadsheetData";
 
 interface SpreadsheetProps {
@@ -6,6 +6,7 @@ interface SpreadsheetProps {
 }
 
 const Spreadsheet = ({ colWidths }: SpreadsheetProps) => {
+	const containerRef = useRef<HTMLDivElement>(null);
 	const paddedRows = [...rows];
 	while (paddedRows.length < 100) paddedRows.push({});
 
@@ -13,6 +14,43 @@ const Spreadsheet = ({ colWidths }: SpreadsheetProps) => {
 		row: number;
 		col: number;
 	} | null>(null);
+
+	useEffect(() => {
+		const handleKeyDown = (e: KeyboardEvent) => {
+			if (!selectedCell) return;
+
+			const { row, col } = selectedCell;
+			const maxRows = paddedRows.length;
+			const maxCols = 10;
+
+			switch (e.key) {
+				case "ArrowDown":
+					setSelectedCell({ row: Math.min(row + 1, maxRows - 1), col });
+					e.preventDefault();
+					break;
+				case "ArrowUp":
+					setSelectedCell({ row: Math.max(row - 1, 0), col });
+					e.preventDefault();
+					break;
+				case "ArrowLeft":
+					setSelectedCell({ row, col: Math.max(col - 1, 0) });
+					e.preventDefault();
+					break;
+				case "ArrowRight":
+					setSelectedCell({ row, col: Math.min(col + 1, maxCols - 1) });
+					e.preventDefault();
+					break;
+			}
+		};
+
+		const container = containerRef.current;
+		container?.addEventListener("keydown", handleKeyDown);
+		return () => container?.removeEventListener("keydown", handleKeyDown);
+	}, [selectedCell]);
+
+	useEffect(() => {
+		containerRef.current?.focus();
+	}, []);
 
 	const getStatusStyle = (status: string | undefined) => {
 		switch (status) {
@@ -43,7 +81,11 @@ const Spreadsheet = ({ colWidths }: SpreadsheetProps) => {
 	};
 
 	return (
-		<div className="w-full max-h-[calc(100vh-180px)] overflow-y-scroll scrollbar-hide will-change-transform">
+		<div
+			ref={containerRef}
+			tabIndex={0}
+			className="w-full max-h-[calc(100vh-180px)] overflow-y-scroll scrollbar-hide will-change-transform"
+		>
 			{paddedRows.map((row, rowIndex) => (
 				<div key={rowIndex} className="flex text-sm h-[36px]">
 					{/* Index column */}
