@@ -56,7 +56,7 @@ const Toolbar = () => {
 			{/* Right */}
 			<div className="flex items-center gap-2">
 				<button
-					className="border border-gray-200 flex items-center justify-center gap-1 py-1.75 rounded-md px-2 text-gray-600 hover:bg-[#4B6A4F] hover:text-white duration-200 ease-in"
+					className="border border-gray-200 flex items-center justify-center gap-1 py-2 rounded-md px-2 text-gray-600 hover:bg-[#4B6A4F] hover:text-white duration-200 ease-in"
 					onClick={() => console.log("Importing data")}
 				>
 					<LiaDownloadSolid className="text-lg" />
@@ -64,7 +64,7 @@ const Toolbar = () => {
 				</button>
 
 				<button
-					className="border border-gray-200 flex items-center justify-center gap-1 py-1.75 rounded-md px-2 text-gray-600 hover:bg-[#4B6A4F] hover:text-white duration-200 ease-in"
+					className="border border-gray-200 flex items-center justify-center gap-1 py-2 rounded-md px-2 text-gray-600 hover:bg-[#4B6A4F] hover:text-white duration-200 ease-in"
 					onClick={() => console.log("Exporting data")}
 				>
 					<LiaDownloadSolid className="rotate-180 text-lg" />
@@ -72,7 +72,7 @@ const Toolbar = () => {
 				</button>
 
 				<button
-					className="border border-gray-200 flex items-center justify-center gap-1 py-1.75 rounded-md px-2 text-gray-600 hover:bg-[#4B6A4F] hover:text-white duration-200 ease-in"
+					className="border border-gray-200 flex items-center justify-center gap-1 py-2 rounded-md px-2 text-gray-600 hover:bg-[#4B6A4F] hover:text-white duration-200 ease-in"
 					onClick={() => console.log("Sharing spreadsheet")}
 				>
 					<FaRegShareFromSquare className="text-lg" />
@@ -80,7 +80,7 @@ const Toolbar = () => {
 				</button>
 
 				<button
-					className="bg-[#4B6A4F] text-white flex items-center justify-center gap-1 py-1.75 rounded-md px-5"
+					className="bg-[#4B6A4F] text-white flex items-center justify-center gap-1 py-2 rounded-md px-6"
 					onClick={() => console.log("New action started")}
 				>
 					<img src={Arrow_Split} alt="New Action" />

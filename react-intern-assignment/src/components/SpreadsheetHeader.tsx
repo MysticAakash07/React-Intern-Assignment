@@ -57,14 +57,29 @@ const SpreadsheetHeader = ({
 					style={{
 						width: colWidths[i + 1],
 						minWidth: 50,
-						backgroundColor: heading.bgColor || "#f3f3f3", // default gray background
+						backgroundColor: heading.bgColor || "#f3f3f3",
 					}}
 				>
-					<div className="flex items-center gap-1">
+					{/* Clickable heading label */}
+					<div
+						onClick={() => console.log(`Clicked header: ${heading.label}`)}
+						className="flex items-center gap-1 cursor-pointer"
+					>
 						{heading.icon1 && <span>{heading.icon1}</span>}
 						<span>{heading.label}</span>
 					</div>
-					{heading.icon2 && <span>{heading.icon2}</span>}
+
+					{/* Clickable icon2 (e.g. filter/settings) */}
+					{heading.icon2 && (
+						<span
+							onClick={() => console.log(`Clicked icon2 in: ${heading.label}`)}
+							className="cursor-pointer"
+						>
+							{heading.icon2}
+						</span>
+					)}
+
+					{/* Resize handle */}
 					<div
 						onMouseDown={(e) => handleMouseDown(e, i + 1)}
 						className="absolute top-0 right-0 h-full w-2 cursor-col-resize"

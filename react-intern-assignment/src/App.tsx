@@ -9,7 +9,7 @@ import SpreadsheetFooter from "./components/SpreadsheetFooter";
 function App() {
 	const [colWidths, setColWidths] = useState<number[]>([
 		30, // Index
-		200, // Job Request
+		300, // Job Request
 		150, // Submitted
 		150, // Status
 		150, // Submitter
