@@ -2,10 +2,9 @@ import Navbar from "./components/NavBar";
 import Toolbar from "./components/ToolBar";
 import FormulaBar from "./components/FormulaBar";
 import Spreadsheet from "./components/Spreadsheet";
-import SheetTabs from "./components/SheetTabs";
-import { columns } from "./data/spreadsheetData";
 import { useState } from "react";
 import SpreadsheetHeader from "./components/SpreadsheetHeader";
+import SpreadsheetFooter from "./components/SpreadsheetFooter";
 
 function App() {
 	const [colWidths, setColWidths] = useState<number[]>([
@@ -31,11 +30,12 @@ function App() {
 				<FormulaBar colWidths={colWidths} />
 				<SpreadsheetHeader colWidths={colWidths} setColWidths={setColWidths} />
 				<div
-					className="overflow-y-auto"
+					className="overflow-y-auto mb-10"
 					style={{ maxHeight: "calc(100vh - [total header height])" }}
 				>
 					<Spreadsheet colWidths={colWidths} setColWidths={setColWidths} />
 				</div>
+				<SpreadsheetFooter indexColWidth={colWidths[0]} />
 			</div>
 		</div>
 	);
