@@ -33,7 +33,7 @@ function App() {
 					className="overflow-y-auto mb-10"
 					style={{ maxHeight: "calc(100vh - [total header height])" }}
 				>
-					<Spreadsheet colWidths={colWidths} setColWidths={setColWidths} />
+					<Spreadsheet colWidths={colWidths} />
 				</div>
 				<SpreadsheetFooter indexColWidth={colWidths[0]} />
 			</div>

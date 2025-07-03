@@ -1,6 +1,5 @@
 import { columns } from "../data/spreadsheetData";
 import { useRef } from "react";
-import { RxDragHandleDots2 } from "react-icons/rx";
 
 interface SpreadsheetHeaderProps {
 	colWidths: number[];

@@ -3,10 +3,9 @@ import { rows } from "../data/spreadsheetData";
 
 interface SpreadsheetProps {
 	colWidths: number[];
-	setColWidths: React.Dispatch<React.SetStateAction<number[]>>;
 }
 
-const Spreadsheet = ({ colWidths, setColWidths }: SpreadsheetProps) => {
+const Spreadsheet = ({ colWidths }: SpreadsheetProps) => {
 	const paddedRows = [...rows];
 	while (paddedRows.length < 100) paddedRows.push({});
 
@@ -78,13 +77,12 @@ const Spreadsheet = ({ colWidths, setColWidths }: SpreadsheetProps) => {
 						// Cell formatting
 						const baseClass =
 							"px-2 py-1 truncate overflow-hidden box-border cursor-pointer";
-							const textAlign =
-								colIdx === 1 || colIdx === 7 || colIdx === 8
-									? "text-right"
-									: colIdx === 2 || colIdx === 6 || colIdx === 9
-									? "flex items-center justify-center text-center"
-									: "text-left";
-						
+						const textAlign =
+							colIdx === 1 || colIdx === 7 || colIdx === 8
+								? "text-right"
+								: colIdx === 2 || colIdx === 6 || colIdx === 9
+								? "flex items-center justify-center text-center"
+								: "text-left";
 
 						const selectedBorder = isSelected
 							? "border-[2px] border-[#6C8B70] shadow-[0_0_0_2px_rgba(0,128,0,0.2)] z-10 bg-white"
@@ -116,7 +114,7 @@ const Spreadsheet = ({ colWidths, setColWidths }: SpreadsheetProps) => {
 								}}
 							>
 								{/* Cell Content */}
-								{colIdx === 2 && cell ? (
+								{colIdx === 2 && typeof cell === "string" ? (
 									<span
 										className={`font-medium py-1 px-2 text-xs rounded-2xl justify-center ${getStatusStyle(
 											cell
@@ -124,9 +122,9 @@ const Spreadsheet = ({ colWidths, setColWidths }: SpreadsheetProps) => {
 									>
 										{cell}
 									</span>
-								) : colIdx === 4 && cell ? (
+								) : colIdx === 4 && typeof cell === "string" ? (
 									<span className="underline">{cell}</span>
-								) : colIdx === 6 && cell ? (
+								) : colIdx === 6 && typeof cell === "string" ? (
 									<span className={`font-semibold ${getPriorityColor(cell)}`}>
 										{cell}
 									</span>

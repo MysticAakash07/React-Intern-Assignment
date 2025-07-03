@@ -31,7 +31,7 @@ const SpreadsheetFooter = ({ indexColWidth }: SpreadsheetFooterProps) => {
 				<button
 					key={tab}
 					onClick={() => handleTabClick(tab)}
-					className={`px-4 py-3 text-sm transition-all ${
+					className={`px-4 py-3 text-sm transition-all font-medium ${
 						tab === activeTab
 							? "bg-[#E8F0E9] text-[#3E5741] font-medium  border-[#3E5741] border-t-2"
 							: " hover:bg-gray-200 text-[#757575]"

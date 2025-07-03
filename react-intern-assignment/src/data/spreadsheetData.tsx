@@ -53,7 +53,11 @@ export const rows = [
 		assigned: "Sophie Choudhury",
 		priority: "Medium",
 		dueDate: "20-11-2024",
-		estValue: "₹6,200,000",
+		estValue: (
+			<span>
+				6,200,000<span className="text-[#AFAFAF] mx-1">₹</span>
+			</span>
+		),
 		placeholder: "...",
 	},
 	{
@@ -65,7 +69,11 @@ export const rows = [
 		assigned: "Tejas Pandey",
 		priority: "High",
 		dueDate: "30-10-2024",
-		estValue: "₹3,500,000",
+		estValue: (
+			<span>
+				3,500,000<span className="text-[#AFAFAF] mx-1">₹</span>
+			</span>
+		),
 		placeholder: "...",
 	},
 	{
@@ -77,7 +85,11 @@ export const rows = [
 		assigned: "Rachel Lee",
 		priority: "Medium",
 		dueDate: "10-12-2024",
-		estValue: "₹4,750,000",
+		estValue: (
+			<span>
+				4,750,000<span className="text-[#AFAFAF] mx-1">₹</span>
+			</span>
+		),
 		placeholder: "...",
 	},
 	{
@@ -89,7 +101,11 @@ export const rows = [
 		assigned: "Tom Wright",
 		priority: "Low",
 		dueDate: "15-01-2025",
-		estValue: "₹5,900,000",
+		estValue: (
+			<span>
+				5,900,000<span className="text-[#AFAFAF] mx-1">₹</span>
+			</span>
+		),
 		placeholder: "...",
 	},
 	{
@@ -101,7 +117,11 @@ export const rows = [
 		assigned: "Kevin Smith",
 		priority: "Low",
 		dueDate: "30-01-2025",
-		estValue: "₹2,800,000",
+		estValue: (
+			<span>
+				2,800,000<span className="text-[#AFAFAF] mx-1">₹</span>
+			</span>
+		),
 		placeholder: "...",
 	},
 	{},
