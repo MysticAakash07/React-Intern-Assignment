@@ -25,7 +25,7 @@ function FormulaBar({ colWidths }: FormulaBarProps) {
 				}}
 			>
 				<div
-					className="flex items-center gap-1 bg-[#eeeeee] py-1 px-1.5 rounded-md border border-[#eeeeee] cursor-pointer"
+					className="flex items-center gap-1 bg-[#eeeeee] py-1 px-1.5 rounded-md border border-[#eeeeee] cursor-pointer mt-1"
 					onClick={() => console.log("Opened: Q3 Financial Overview")}
 				>
 					<PiLinkSimpleHorizontalLight className="text-blue-700 text-lg" />
