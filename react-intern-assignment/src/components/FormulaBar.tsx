@@ -25,14 +25,14 @@ function FormulaBar({ colWidths }: FormulaBarProps) {
 				}}
 			>
 				<div
-					className="flex items-center gap-1 bg-[#eeeeee] py-1 px-1.5 rounded-md border border-[#eeeeee] cursor-pointer mt-1"
+					className="flex items-center gap-1 bg-[#eeeeee] py-1 px-1.5 rounded-md border border-[#eeeeee] cursor-pointer"
 					onClick={() => console.log("Opened: Q3 Financial Overview")}
 				>
 					<PiLinkSimpleHorizontalLight className="text-blue-700 text-lg" />
 					<span className="text-gray-500">Q3 Financial Overview</span>
 				</div>
 				<SlRefresh
-					className="text-red-500 cursor-pointer mt-1"
+					className="text-red-500 cursor-pointer"
 					onClick={() => console.log("Refreshed data")}
 				/>
 			</div>
