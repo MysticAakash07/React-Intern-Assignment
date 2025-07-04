@@ -19,7 +19,7 @@ function FormulaBar({ colWidths }: FormulaBarProps) {
 
 			{/* Q3 Financial Overview with Refresh */}
 			<div
-				className="flex px-2 py-1 text-sm truncate gap-2 items-center bg-[#e2e2e2] border border-[#eeeeee]"
+				className="flex px-2 py-1 text-sm truncate gap-2 items-center bg-[#e2e2e2] border border-[#eeeeee] content-center"
 				style={{
 					width: colWidths[1] + colWidths[2] + colWidths[3] + colWidths[4],
 				}}
@@ -32,7 +32,7 @@ function FormulaBar({ colWidths }: FormulaBarProps) {
 					<span className="text-gray-500">Q3 Financial Overview</span>
 				</div>
 				<SlRefresh
-					className="text-red-500 cursor-pointer"
+					className="text-red-500 cursor-pointer mt-1"
 					onClick={() => console.log("Refreshed data")}
 				/>
 			</div>
